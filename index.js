@@ -10,16 +10,14 @@ const argv = yargs
     })    
     .command("sumar", "Suma dos numeros", {
         num1:{
-            alias: "a",
             type: "number",
             demandOption: true,
-            describe: "Primer número a sumar",
+            describe: "numero 1",
         },
         num2:{
-            alias: "b",
             type: "number",
             demandOption: true,
-            describe: "Segundo número a sumar",
+            describe: "numero 2",
         }
     })
 .help()
@@ -29,7 +27,7 @@ const argv = yargs
 if (argv._.includes('saludar'||"despedir")) {
     if (!argv.nombre || argv.nombre.trim() === '') {
         console.log('Error: El nombre no puede estar vacío.');
-        process.exit(1);  // Termina el script con un código de error
+        process.exit(1);
     } else if (argv._.includes("saludar")) {
         console.log(`Hola, ${argv.nombre}!`);
     }else{
